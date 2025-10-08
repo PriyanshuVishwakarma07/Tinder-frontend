@@ -3,9 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore.js";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={appStore}>
+    <BrowserRouter>
+      <App />
+      <ToastContainer position="bottom-right" autoClose={3000} theme="dark" />
+    </BrowserRouter>
+  </Provider>,
 );

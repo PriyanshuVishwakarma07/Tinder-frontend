@@ -1,10 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+
+  const user = useSelector((store)=>store.user)
+  console.log(user);
   
   return (
         <>
-        <div className="navbar bg-base-300">
+        <div className="navbar absolute top-0 bg-base-300 z-40">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">👩‍💻 DevTinder</a>
         </div>
